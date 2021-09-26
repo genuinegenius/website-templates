@@ -62,7 +62,10 @@ document.addEventListener("click", e => {
 function getDataForDelete(e) {
     let currentData = e.currentTarget.value;
 
-    id("`%currentData%`").style.backgroundColor = "red";
+    let elementToRemove = id(currentData);
+    if (elementToRemove) {
+        elementToRemove.parentNode.removeChild(elementToRemove);
+    }
 }
 
 function getDataForEdit(e) {
