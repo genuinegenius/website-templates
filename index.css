@@ -1,0 +1,284 @@
+:root {
+  --main-bg-color: #1f1b24;
+  --menu-bg-color: #121212;
+  --buttons-bg-color: #332940;
+  --menu-firstbutton-mLeft: 10%;
+  --menu-buttons-mLeft: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* top menu */
+
+div.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--menu-bg-color);
+}
+
+.menu_left {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  background-color: transparent;
+  height: 100%;
+  width: 80%;
+}
+
+.menu_right_edit {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  width: 20%;
+  height: 100%;
+}
+
+.button_menu_edit_container {
+  width: auto;
+  height: 100%;
+  background-color: transparent;
+}
+
+button.edit_pen {
+  color: white;
+  width: 25px;
+  height: 25px;
+  background-color: var(--buttons-bg-color);
+  border: 1px solid var(--menu-bg-color);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 12.5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.edit_menu {
+  position: relative;
+  opacity: 0;
+  height: auto;
+  width: 100px;
+  background-color: var(--buttons-bg-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  left: -95px;
+  transition: opacity 200ms ease-in-out;
+}
+
+.button_menu_edit_container.active > .edit_pen + .edit_menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+.button_menu_edit_container.active > .edit_pen {
+  opacity: 0.75;
+}
+
+.edit_pen:hover {
+  opacity: 0.75;
+}
+
+div.button_menu_add_container {
+  width: auto;
+  height: 100%;
+  margin-left: var(--menu-buttons-mLeft);
+  background-color: transparent;
+}
+
+button.buttons_menu {
+  color: white;
+  margin-left: var(--menu-firstbutton-mLeft);
+  background-color: var(--buttons-bg-color);
+  border: 1px solid var(--menu-bg-color);
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.buttons_menu2 {
+  color: white;
+  background-color: var(--buttons-bg-color);
+  border: 1px solid var(--menu-bg-color);
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-left: var(--menu-buttons-mLeft);
+}
+
+div.menu_add_content {
+  position: relative;
+  opacity: 0;
+  height: auto;
+  width: 150px;
+  background-color: var(--buttons-bg-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  transition: opacity 200ms ease-in-out;
+}
+
+button.button_menu_add {
+  position: relative;
+  color: white;
+  width: 25px;
+  height: 25px;
+  background-color: var(--buttons-bg-color);
+  border: 1px solid var(--menu-bg-color);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 12.5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.button_menu_add_container.active > .button_menu_add + .menu_add_content {
+  opacity: 1;
+  pointer-events: auto;
+}
+.button_menu_add_container.active > .button_menu_add {
+  opacity: 0.75;
+}
+.button_menu_add:hover {
+  opacity: 0.75;
+}
+.buttons_menu:hover {
+  opacity: 0.75;
+}
+
+/* secondary menu */
+
+.secondary_menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(20% - 20px);
+  height: 250px;
+  color: white;
+  padding: 10px;
+  background-color: var(--menu-bg-color);
+  margin-left: calc(var(--menu-firstbutton-mLeft) - 2%);
+  margin-top: var(--menu-buttons-mLeft);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* main */
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(60% - 20px);
+  height: 250px;
+  color: white;
+  padding: 10px;
+  background-color: var(--menu-bg-color);
+  margin-left: 10%;
+  margin-top: var(--menu-buttons-mLeft);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* document */
+
+.container {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+/* add menu elements button */
+
+div.rows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 10px);
+  margin: 5px 0 5px 0;
+  padding: 5px;
+  height: 30px;
+  -webkit-user-select: none;
+  user-select: none;
+  border-radius: 5px;
+}
+
+div.value {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  text-align: left;
+}
+
+div.choices {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  text-align: center;
+}
+
+button.choice_structure_x {
+  color: white;
+  border: 1px solid var(--buttons-bg-color);
+  margin: 0 2px 0 2px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--buttons-bg-color);
+}
+
+button.choice_structure_edit {
+  color: white;
+  border: 1px solid var(--buttons-bg-color);
+  margin: 0 2px 0 2px;
+  padding: 2px 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--buttons-bg-color);
+}
+
+.choice_structure_x:hover,
+.choice_structure_edit:hover {
+  opacity: 0.75;
+}
+
+button.row_add_more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid var(--buttons-bg-color);
+  width: calc(100%);
+  margin: 5px 0 5px 0;
+  height: 30px;
+  -webkit-user-select: none;
+  user-select: none;
+  border-radius: 5px;
+}
+
+.row_add_more:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
