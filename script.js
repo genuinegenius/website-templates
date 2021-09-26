@@ -19,13 +19,18 @@ if (!(auxForLocalStorage == menuState)) {
 let menuLeftBar = id('menu_left');
 
 if (menuState.length == 0) {
+    menuLeftBar.innerHTML += '<div id="button_menu_add_container" class="button_menu_add_container" '
+        + 'style="margin-left:var(--menu-firstbutton-mLeft)" button_menu_add_container><button id="button_menu_add" class="button_menu_add" button_menu_add>'
+        + '&#10010;</button><div id="menu_add_content" class="menu_add_content"></div></div>';
+}
+else {
     //print menu_left options from localstorage
     menuState.forEach(e => {
         menuLeftBar.innerHTML +=
             '<button id="' + e + '" class="buttons_menu" buttons_menu>' + e + '</button>';
     })
     menuLeftBar.innerHTML += '<div id="button_menu_add_container" class="button_menu_add_container" '
-        + 'style="margin-left:var(--menu-firstbutton-mLeft)" button_menu_add_container><button id="button_menu_add" class="button_menu_add" button_menu_add>'
+        + 'button_menu_add_container><button id="button_menu_add" class="button_menu_add" button_menu_add>'
         + '&#10010;</button><div id="menu_add_content" class="menu_add_content"></div></div>';
 }
 
