@@ -5,9 +5,24 @@ function id(element) {
 let menuState = [];
 let count = 0;
 
+let auxForLocalStorage = JSON.parse(localStorage.getItem('menuState'));
+console.log(auxForLocalStorage)
+
 document.querySelectorAll('[buttons_menu]').forEach(e => {
     menuState[count++] = e.innerHTML;
 });
+
+if (!(auxForLocalStorage == menuState)) {
+    menuState = auxForLocalStorage;
+}
+
+let menuLeftBar = id('menu_left');
+
+
+//print menu_left options from localstorage
+menuState.forEach(e => {
+    menuLeftBar.innerHTML = menuLeftBar.innerHTML + '<button id="' + e + '" class="buttons_menu" buttons_menu>' + e + '</button>';
+})
 
 document.addEventListener("click", e => {
     let button_add = e.target.matches('[button_menu_add]');
@@ -63,8 +78,22 @@ function getDataForDelete(e) {
     let currentData = e.currentTarget.value;
 
     let elementToRemove = id(currentData);
+
+    menuState.forEach(e => {
+        if (currentData === e) {
+            menuState.splice(menuState.indexOf(e), 1);
+
+            let stringOfMenuState = JSON.stringify(menuState);
+            localStorage.setItem('menuState', stringOfMenuState);
+            console.log(localStorage.getItem('menuState'));
+        }
+    })
+    console.log(menuState);
+
+
     if (elementToRemove) {
         elementToRemove.parentNode.removeChild(elementToRemove);
+
     }
 }
 
