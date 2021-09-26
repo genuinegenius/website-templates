@@ -18,9 +18,7 @@ if (!(auxForLocalStorage == menuState)) {
 
 let menuLeftBar = id('menu_left');
 
-console.log(menuState.length);
-
-if (menuState.length == 0) {
+if (menuState != null && menuState.length < 1) {
     menuLeftBar.innerHTML += '<div id="button_menu_add_container" class="button_menu_add_container" '
         + 'style="margin-left:var(--menu-firstbutton-mLeft)" button_menu_add_container><button id="button_menu_add" class="button_menu_add" button_menu_add>'
         + '&#10010;</button><div id="menu_add_content" class="menu_add_content"></div></div>';
@@ -35,6 +33,10 @@ else {
         + 'button_menu_add_container><button id="button_menu_add" class="button_menu_add" button_menu_add>'
         + '&#10010;</button><div id="menu_add_content" class="menu_add_content"></div></div>';
 }
+
+menuLeftBar.innerHTML += '<div id="button_menu_add_container" class="button_menu_add_container" '
+        + 'style="margin-left:var(--menu-firstbutton-mLeft)" button_menu_add_container><button id="button_menu_add" class="button_menu_add" button_menu_add>'
+        + '&#10010;</button><div id="menu_add_content" class="menu_add_content"></div></div>';
 
 document.addEventListener("click", e => {
     let button_add = e.target.matches('[button_menu_add]');
